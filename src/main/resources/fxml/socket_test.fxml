@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<VBox fx:id="rootVBoxInner" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sockett.controller.SocketTestController">
+    <children>
+        <AnchorPane prefWidth="1000.0" VBox.vgrow="ALWAYS">
+            <children>
+                <HBox layoutX="10.0" layoutY="-8.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="10.0"
+                      AnchorPane.topAnchor="-8.0"/>
+                <Text layoutX="17.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="请输入IP："/>
+                <TextField fx:id="ipInput" layoutX="104.0" layoutY="21.0" prefHeight="23.0" prefWidth="161.0"
+                           promptText="127.0.0.1"/>
+                <Text layoutX="18.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="请输入端口号："/>
+                <TextField fx:id="portInput" layoutX="104.0" layoutY="59.0" prefHeight="23.0" prefWidth="161.0"/>
+                <CheckBox fx:id="heartBeat" layoutX="17.0" layoutY="100.0" mnemonicParsing="false" text="心跳发送"/>
+                <Text layoutX="107.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="设置间隔时间长："/>
+                <TextField fx:id="heartInput" layoutX="200.0" layoutY="97.0" prefHeight="23.0" prefWidth="59.0"/>
+                <Text layoutX="270.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/s"/>
+                <CheckBox fx:id="setCode" layoutX="16.0" layoutY="132.0" mnemonicParsing="false" text="设置编号"/>
+                <Text layoutX="108.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="设备编号为："/>
+                <TextField fx:id="deviceCode" layoutX="200.0" layoutY="128.0" prefHeight="23.0" prefWidth="59.0"/>
+
+                <Text layoutX="108.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="设置模拟组数："/>
+                <CheckBox fx:id="openMutil" layoutX="16.0" layoutY="162.0" mnemonicParsing="false" text="多组模拟"/>
+                <TextField fx:id="mutilNumber" layoutX="200.0" layoutY="158.0" prefHeight="23.0" prefWidth="59.0"/>
+                <Button fx:id="linkServer" layoutX="13.0" layoutY="191.0" mnemonicParsing="false"
+                        onMouseClicked="#LinkSever" text="连接"/>
+
+                <CheckBox fx:id="rebootReport" layoutX="14.0" layoutY="225.0" mnemonicParsing="false" text="重启上报"/>
+                <CheckBox fx:id="accPowerOn" layoutX="14.0" layoutY="255.0" mnemonicParsing="false" text="ACC上电"/>
+                <CheckBox fx:id="accPowerOff" layoutX="14.0" layoutY="287.0" mnemonicParsing="false" text="ACC掉电"/>
+                <CheckBox fx:id="serverErr" layoutX="117.0" layoutY="256.0" mnemonicParsing="false" text="服务器返回错误"/>
+                <CheckBox fx:id="batteryLow" layoutX="117.0" layoutY="226.0" mnemonicParsing="false" text="备用电池耗尽"/>
+                <CheckBox fx:id="senorErr" layoutX="117.0" layoutY="291.0" mnemonicParsing="false" text="传感器故障报警"/>
+                <Button fx:id="sendReport" layoutX="14.0" layoutY="317.0" mnemonicParsing="false"
+                        onMouseClicked="#sendReport" text="发送报警"/>
+
+
+                <Text layoutX="11.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="发送自定义数据："/>
+                <TextField fx:id="selfText" layoutX="111.0" layoutY="354.0"/>
+                <CheckBox fx:id="hexSend" layoutX="12.0" layoutY="388.0" mnemonicParsing="false" text="16进制发送"/>
+                <Button fx:id="sendMsg" layoutX="14.0" layoutY="411.0" mnemonicParsing="false" onMouseClicked="#sendMsg"
+                        text="发送信息"/>
+
+                <TextArea fx:id="logTextArea" layoutY="476.0" prefHeight="157.0" prefWidth="960.0"
+                          AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"/>
+                <Button fx:id="cleantext" layoutX="190.0" layoutY="411.0" mnemonicParsing="false"
+                        onMouseClicked="#cleantext" text="清空信息"/>
+
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

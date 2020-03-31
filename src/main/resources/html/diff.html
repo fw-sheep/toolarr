@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>在线文本对比</title>
+    <meta name="description" content="本工具能快速比对两端代码或者是文本之间的差异，并直观地展现在您面前">
+    <meta name="keywords" content="在线文本对比,在线工具箱,工具箱,网页工具箱">
+    <link rel="stylesheet" href="../static/bootstrap/bootstrap.min.css">
+    <script src="../static/jquery/jquery.min.js"></script>
+    <script src="../static/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/diff/style.css">
+    <link rel="stylesheet" href="../static/diff/diffview.css">
+    <link rel="stylesheet" href="../static/diff/my.css">
+    <script src="../static/diff/diffview.js"></script>
+    <script src="../static/diff/difflib.js"></script>
+    <script src="../static/diff/function.js"></script>
+</head>
+
+<body>
+
+<!--动态背景-->
+<div id="particles"></div>
+
+<div class="container">
+    <!--公共banner部分结束-->
+    <div class="panel panel-default" style="margin-top: 20px;">
+        <div class="panel-heading">在线文本差异对比</div>
+        <div class="panel-body">
+
+            <input type="hidden" id="contextSize" value="">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Base Text（基础文本）</p>
+                    <textarea id="baseText" class="form-control" rows="10"></textarea>
+                </div>
+
+                <div class="col-md-6">
+                    <p>New Text（对比文本）</p>
+                    <textarea id="newText" class="form-control" rows="10"></textarea>
+                </div>
+            </div> <!--class="row"-->
+
+            <div class="toolbar text-right">
+                对比方式：
+                <label class="radio-inline">
+                    <input type="radio" name="viewType" id="beside" value="0"> 左右并排
+                </label>
+
+                <label class="radio-inline">
+                    <input type="radio" name="viewType" id="inline" value="1" checked=""> 上下对比
+                </label>
+                &nbsp;
+                <button type="button" class="btn btn-primary btn-check" onclick="javascript:diffUsingJS();">对比</button>
+            </div>
+
+            <div id="diffoutput" class="table-responsive">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.web.WebView?>
+<VBox fx:id="rootVBoxInner" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sockett.controller.WebViewController">
+    <children>
+        <AnchorPane prefWidth="1000.0" VBox.vgrow="ALWAYS">
+            <children>
+                <WebView fx:id="webViewIndex" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                         AnchorPane.rightAnchor="0.0">
+
+                </WebView>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
